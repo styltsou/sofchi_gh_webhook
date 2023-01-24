@@ -11,6 +11,10 @@ const PM2_CMD = "cd ~ && pm2 startOrRestart ecosystem.config.js";
 
 const server = http
 	.createServer((req, res) => {
+		console.log(req.method);
+		console.log(req.url);
+		console.log(req.header['content-type']);
+
 		if (
 			req.method === "POST" &&
 			req.url === "/gh-webhook" &&
